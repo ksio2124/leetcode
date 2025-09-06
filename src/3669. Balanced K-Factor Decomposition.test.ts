@@ -45,6 +45,24 @@ import { describe, it, expect } from 'vitest';
 //     2 <= k <= 5
 //     k is strictly less than the total number of positive divisors of n.
 
+function combination(arrs: number[][], primeFactors: number[], primeFactorsIdx: number) {
+  if (primeFactorsIdx > primeFactors.length) {
+    for (let arrsIdx = 0; arrsIdx < arrs.length;arrsIdx++) {
+      // remove any solution that has empty arrs
+      if (arrs[arrsIdx].length === 0) {
+        return;
+      }
+
+    }
+    // set solution when arrs is all filled
+  }
+  for (let arrsIdx = 0; arrsIdx < arrs.length; arrsIdx++) {
+    arrs[arrsIdx].push(primeFactors[primeFactorsIdx]);
+    combination(arrs, primeFactors, primeFactorsIdx++)
+    arrs[arrsIdx].pop();
+  }
+}
+
 function minDifference(n: number, k: number): number[] {
     // find all prime factors
     // multiple the prime factors from smallest to greatest in k buckets
@@ -61,11 +79,13 @@ function minDifference(n: number, k: number): number[] {
       }
     }
     console.log(primeFactors)
-    const res = Array(k).fill(1)
-    for (let i = 0; i < primeFactors.length; i++) {
-      const bucketIndex = i % res.length;
-      res[bucketIndex] *= primeFactors[i]
-    }
+    // combination
+    const res = Array(k).fill([]);
+
+    // for (let i = 0; i < primeFactors.length; i++) {
+    //   const bucketIndex = i % res.length;
+    //   res[bucketIndex] *= primeFactors[i]
+    // }
 
     return res;
 
