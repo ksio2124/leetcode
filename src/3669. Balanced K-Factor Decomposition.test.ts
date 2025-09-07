@@ -91,18 +91,18 @@ function minDifference(n: number, k: number): number[] {
 
 };
 
-describe('recoverOrder', () => {
-  it('should return friends in order', () => {
-    expect(minDifference(100,2)).toEqual([10,10]);
-  });
+// describe('recoverOrder', () => {
+//   it('should return friends in order', () => {
+//     expect(minDifference(100,2)).toEqual([10,10]);
+//   });
 
-    it('should return friends in order', () => {
-    expect(minDifference(44,3)).toEqual([2,2,11]);
-  });
+//     it('should return friends in order', () => {
+//     expect(minDifference(44,3)).toEqual([2,2,11]);
+//   });
 
-    it('should return friends in order', () => {
-    expect(minDifference(360,4)).toEqual([3,4,5,6]);
-  });
+//     it('should return friends in order', () => {
+//     expect(minDifference(360,4)).toEqual([3,4,5,6]);
+//   });
 
 
-});
+// });

@@ -1,4 +1,3 @@
-import { builtinModules } from "module";
 import { describe, it, expect } from "vitest";
 
 // 3606. Coupon Code Validator
