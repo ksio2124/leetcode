@@ -1,3 +1,5 @@
+import { describe, it, expect } from 'vitest';
+
 // 3658. GCD of Odd and Even Sums
 // Easy
 // premium lock iconCompanies
@@ -45,30 +47,42 @@
 
 //     1 <= n <= 10​​​​​​​00
 
-function gcdOfOddEvenSums(n: number): number {
+function GCD(numA: number, numB: number): number {
+  let greatestFactor = Math.floor(Math.min(numA, numB) / 2);
+  for (let factor = greatestFactor; factor > 1; factor--) {
+    if ( numA % factor === 0 && numB % factor === 0) {
+      return factor
+    }
+  }
+  return 1
+}
 
-    //brute force no optimization
+function gcdOfOddEvenSums(n: number): number {
 
     // sum all odds up to n
     let oddSum = 0;
-    let evensum = 0;
+    let evenSum = 0;
     // sum all evens up to n
     const lastNum = n * 2;
     for (let i = 1; i <= lastNum; i++) {
       if (i % 2 === 0) {
-        evensum += i;
+        evenSum += i;
       } else {
         oddSum += i
       }
     }
 
-    //find greatest common divisor
-    //check every  number to see if we can find the GCD up to min of oddSum and evenSum
-
-    // GCD cannot be greater than Math.floor()
-    const upto =  n
-
-
-
-
+    return GCD(oddSum, evenSum)
 };
+
+
+describe('gcdOfOddEvenSums', () => {
+  it('should pass', () => {
+    expect(gcdOfOddEvenSums(4)).toEqual(4);
+  });
+
+  it('should pass', () => {
+    expect(gcdOfOddEvenSums(5)).toEqual(5);
+  });
+
+});
