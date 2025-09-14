@@ -1,5 +1,4 @@
 import { describe, it, expect } from "vitest";
-import { PriorityQueue } from "@datastructures-js/priority-queue";
 // 3664. Two-Letter Card Game
 // Medium
 // premium lock iconCompanies
