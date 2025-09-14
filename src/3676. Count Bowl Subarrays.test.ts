@@ -98,7 +98,7 @@ function bowlSubarrays(nums: number[]): number {
     max = nums[nums.length - 1];
     for (let i = nums.length - 2; i >= 0 ; i--) {
         max = Math.max(nums[i + 1], max);
-        suf.push(max)
+        suf[i] = max
     }
     for (let i = 0; i < nums.length; i++) {
         if (pre[i] > nums[i] && suf[i] > nums[i]) {
